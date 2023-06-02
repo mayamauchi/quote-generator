@@ -4,13 +4,13 @@ import Quote from './components/Quote'
 
 function App() {
   const [quote, setQuote] = useState({
-    quote: null,
     author: null,
+    description: null
   })
 
   const fetchQuote = async () => {
     // return await fetch("https://animechan.vercel.app/api/random")
-    return await fetch("https://api.goprogram.ai/inspiration")
+    return await fetch("http://localhost:8080/api/quotes")
 
     .then((response) => response.json());
     
