@@ -1,4 +1,8 @@
-import { client } from "./client";
+const { client } = require("./client");
+const { quoteData } = require("./quotedata");
+const {createQuote} = require("./index");
+
+
 
 async function dropTables() {
   try {
@@ -21,7 +25,7 @@ async function createTables(){
     CREATE TABLE quotes (
       id SERIAL PRIMARY KEY,
       author name,
-      quote VARCHAR(255)
+      description VARCHAR(500)
   );
 
     `);
@@ -36,7 +40,7 @@ async function createInitialQuotes() {
   try {
 
     console.log("Starting to create quotes...");
-    await Promise.all(planetData.map(createPlanet))
+    await Promise.all(quoteData.map(createQuote))
     console.log("Finished creating quotes!");
 
   } catch (error) {
