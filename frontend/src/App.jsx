@@ -40,7 +40,7 @@ function App() {
               size={500}
               color={"#04724D"}
               isLoading={isLoading}
-              // css={overide}
+              css={overide}
               //figure out how to do cssoveride. Possibly last year's version? 
             />
           </div>
