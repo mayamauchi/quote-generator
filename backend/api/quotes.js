@@ -2,7 +2,7 @@ const express = require("express");
 const crypto = require('crypto');
 
 
-const { getAllQuotes } = require("../db/quotes");
+const { getAllQuotes, getQuoteById, getQuoteCount } = require("../db/quotes");
 const quoteRouter = express.Router();
 
 quoteRouter.use((req, res, next) => {
@@ -24,24 +24,15 @@ quoteRouter.get("/", async (req, res, next) => {
   }
 });
 
-// quoteRouter.get('/random', async (req, res, next) => {
-//   try {
-//     const quotes = await getAllQuotes();
-    
-//     // Randomly select a quote from the quotes array
-//     const randomIndex = Math.floor(Math.random() * quotes.length);
-//     const randomQuote = quotes[randomIndex];
+quoteRouter.get('/count', async (req, res, next) => {
+  try {
+    const count = await getQuoteCount();
+    res.json({ count });
+  } catch (error) {
+    next(error)
+  }
+})
 
-//     // Return the random quote as the API response
-//     res.json(randomQuote);
-//   } catch (error) {
-//     next({
-//       name: "NoQuotes",
-//       message: "Couldn't get quotes",
-//       error: "NoQuotes",
-//     });
-//   }
-// });
 quoteRouter.get('/random', async (req, res, next) => {
   try {
     const quotes = await getAllQuotes();
@@ -63,6 +54,15 @@ quoteRouter.get('/random', async (req, res, next) => {
     });
   }
 });
+
+quoteRouter.get('/:id', async (req, res, next) => {
+  try {
+    const quote = await getQuoteById(Number(req.params.id));
+    res.json(quote);
+  } catch (error) {
+    next(error)
+  }
+})
 
 // Function to shuffle an array using the Fisher-Yates algorithm
 function shuffleArray(array) {

@@ -1,8 +1,6 @@
 const { client } = require("./client");
 const { quoteData } = require("./quotedata");
-const {createQuote} = require("./index");
-
-
+const { createQuote } = require("./index");
 
 async function dropTables() {
   try {
@@ -17,7 +15,7 @@ async function dropTables() {
   }
 }
 
-async function createTables(){
+async function createTables() {
   try {
     console.log("Starting to build tables...");
     await client.query(`
@@ -38,11 +36,9 @@ async function createTables(){
 
 async function createInitialQuotes() {
   try {
-
     console.log("Starting to create quotes...");
-    await Promise.all(quoteData.map(createQuote))
+    await Promise.all(quoteData.map(createQuote));
     console.log("Finished creating quotes!");
-
   } catch (error) {
     console.error("Error creating quotes!");
     throw error;
@@ -60,12 +56,10 @@ async function buildingDB() {
     throw error;
   }
 }
-async function testDB(){
+async function testDB() {
   console.log("Starting to test database");
 
   console.log("all quotes");
-  // const allPlanets= await getAllPlanets()
-  // console.log(allPlanets, "All the planets")
 }
 
 buildingDB()
