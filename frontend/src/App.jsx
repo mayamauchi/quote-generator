@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Quote from "./components/Quote";
 import PuffLoader from "react-spinners/PuffLoader";
+import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 
 function App() {
   const [quote, setQuote] = useState({
@@ -51,21 +52,26 @@ function App() {
     fetchQuote().then((quote) => setQuote(quote));
     setTimeout(() => {
       setIsLoading(false);
-    }, 1800);
+    }, 12000);
   }, [quoteCount, quoteIdQueue])
+
+  
 
   return (
     <div className="App">
       {isLoading ? (
         <div id="loader">
           <div id="loader-container">
-            <PuffLoader
+            {/* <PuffLoader
               id="puffloader"
               size={500}
               color={"#04724D"}
-            />
+            /> */}
             <div className="loader-text">
-              <p>Hey you!</p>
+              
+              <h2>Hey you!</h2>
+              <h2>You&apos;re doing great</h2>
+
             </div>
           </div>
         </div>
