@@ -101,4 +101,40 @@ button:hover {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  --font: "Roboto", sans-serif;
+
+}
+
+h2 {
+  position: relative;
+  color: var(--dark);
+  font-weight: bold!important;
+  --font: "Roboto", sans-serif;
+  font-size: 7rem;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 3s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+}
+
+h2:nth-child(2) {
+  animation-delay: 5s; 
+  border-right-color: transparent; 
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1000px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 80%);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
