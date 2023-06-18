@@ -62,17 +62,6 @@ function App() {
       {isLoading ? (
         <div id="loader">
           <div id="loader-container">
-            {/* <PuffLoader
-              id="puffloader"
-              size={500}
-              color={"#04724D"}
-            /> */}
-            {/* <div className="loader-text">
-              
-              <h2>Hey you!</h2>
-              <h2>You&apos;re doing great</h2>
-
-            </div> */}
             <Preloader />
           </div>
         </div>
