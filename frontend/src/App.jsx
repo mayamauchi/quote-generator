@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Quote from "./components/Quote";
 import PuffLoader from "react-spinners/PuffLoader";
-import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
+import Preloader from "./Preloader";
 
 function App() {
   const [quote, setQuote] = useState({
@@ -17,7 +17,7 @@ function App() {
     if (quoteIdQueue.length === 0) {
       generateQuoteIdQueue(quoteCount);
     }
-    console.log(quoteIdQueue)
+    console.log(quoteIdQueue);
     let id = quoteIdQueue.pop();
     const response = await (
       await fetch(`http://localhost:8080/api/quotes/${id}`)
@@ -27,13 +27,13 @@ function App() {
 
   const generateQuoteIdQueue = (count) => {
     setQuoteIdQueue(
-      Array
-        .from({length: count}, (_, i) => i + 1)
-        .sort(() => Math.random() - 0.5)
+      Array.from({ length: count }, (_, i) => i + 1).sort(
+        () => Math.random() - 0.5
+      )
     );
   };
 
-  const generate = async () => { 
+  const generate = async () => {
     setQuote(await fetchQuote());
     setIsLoading(true);
     setIsLoading(false);
@@ -52,13 +52,13 @@ function App() {
     fetchQuote().then((quote) => setQuote(quote));
     setTimeout(() => {
       setIsLoading(false);
-    }, 12000);
-  }, [quoteCount, quoteIdQueue])
-
-  
+    }, 23000);
+  }, [quoteCount, quoteIdQueue]);
 
   return (
     <div className="App">
+      <video src="/waterfall.mp4" autoPlay loop muted />
+
       {isLoading ? (
         <div id="loader">
           <div id="loader-container">
@@ -67,12 +67,13 @@ function App() {
               size={500}
               color={"#04724D"}
             /> */}
-            <div className="loader-text">
+            {/* <div className="loader-text">
               
               <h2>Hey you!</h2>
               <h2>You&apos;re doing great</h2>
 
-            </div>
+            </div> */}
+            <Preloader />
           </div>
         </div>
       ) : (
