@@ -73,7 +73,6 @@ function App() {
         <div className="quoteblock">
           <Quote quote={quote} />
           <button onClick={generate}>Generate New Quote</button>
-//add preloader 
         </div>
       )}
     </div>
