@@ -12,16 +12,17 @@ function Preloader() {
             .typeString("Experiencing burnout or imposter syndrome?")
             .pauseFor(2000)
             .deleteAll()
-            .typeString("Here are some fellow tech mates' quotes to inspire you.")
+            .typeString(
+              "Here are some fellow tech mates' quotes to inspire you."
+            )
             .pauseFor(2000)
             .start();
         }}
         options={{
-            delay: 75, // Delay between each character
-            deleteSpeed: 200, // Speed of erasing
-          }}
+          delay: 75, // Delay between each character
+          deleteSpeed: 200, // Speed of erasing
+        }}
       />
-      
     </div>
   );
 }

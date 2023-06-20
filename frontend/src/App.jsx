@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Quote from "./components/Quote";
-import PuffLoader from "react-spinners/PuffLoader";
 import Preloader from "./Preloader";
 
 function App() {
