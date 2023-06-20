@@ -20,7 +20,9 @@ function App() {
     console.log(quoteIdQueue);
     let id = quoteIdQueue.pop();
     const response = await (
-      await fetch(`https://guarded-wildwood-51517-913a3c90f0b9.herokuapp.com/api/quotes/${id}`)
+      await fetch(
+        `https://guarded-wildwood-51517-913a3c90f0b9.herokuapp.com/api/quotes/${id}`
+      )
     ).json();
     return response;
   };
@@ -40,7 +42,9 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`https://guarded-wildwood-51517-913a3c90f0b9.herokuapp.com/api/quotes/count`).then(async (res) => {
+    fetch(
+      `https://guarded-wildwood-51517-913a3c90f0b9.herokuapp.com/api/quotes/count`
+    ).then(async (res) => {
       let response = await res.json();
       setQuoteCount(response.count);
       generateQuoteIdQueue(response.count);

@@ -1,6 +1,4 @@
-
 const Quote = ({ quote }) => {
-  
   return (
     <div className="quote">
       <blockquote>{quote.description}</blockquote>
@@ -10,7 +8,5 @@ const Quote = ({ quote }) => {
     </div>
   );
 };
-
-
 
 export default Quote;
