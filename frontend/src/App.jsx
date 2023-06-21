@@ -55,8 +55,8 @@ function App() {
     fetchQuote().then((quote) => setQuote(quote));
     setTimeout(() => {
       setIsLoading(false);
-    // }, 23000);
-    }, 1000);
+    }, 23000);
+    // }, 1000);
   }, [quoteCount, quoteIdQueue]);
 
   return (
@@ -66,7 +66,7 @@ function App() {
       {isLoading ? (
         <div id="loader">
           <div id="loader-container">
-            {/* <Preloader /> */}
+            <Preloader />
           </div>
         </div>
       ) : (
