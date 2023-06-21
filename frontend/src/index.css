@@ -128,7 +128,7 @@ button:hover {
     width: 600px;
   }
   .author,
-  button {
+  button, .loader-text {
     font-size: 1.2rem;
   }
   blockquote {
@@ -139,7 +139,7 @@ button:hover {
 
 @media screen and (max-width: 768px) {
   .author,
-  button {
+  button, .loader-text {
     font-size: 1rem;
   }
   blockquote {
@@ -157,7 +157,7 @@ button:hover {
 
 @media screen and (max-width: 450px) {
   .author,
-  button {
+  button, .loader-text {
     font-size: 1rem;
   }
   blockquote {
