@@ -118,3 +118,20 @@ button:hover {
   color: #fff;
   margin-top: 40px;
 }
+
+@media screen and (max-width: 768px) {
+  .author,
+  button {
+    font-size: 1rem;
+  }
+  blockquote {
+    font-size: 1.5rem;
+  }
+
+  .loader-text,
+  .blockquote,
+  .quote,
+  .quoteblock {
+    width: 450px;
+  }
+}
