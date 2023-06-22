@@ -125,6 +125,11 @@ const quoteData = [
         id: 25,
         author: "Unknown",
         description: "Embrace your accomplishments, for they are a testament to your abilities and hard work."
+    },
+    {
+        id: 26,
+        author: "Henri Matisse",
+        description: "Don't wait for inspiration. It comes while working."
     }
 
 ]
