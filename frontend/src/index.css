@@ -4,7 +4,6 @@
   --dark: #04724d;
   --light: #8db38b;
   --grey: #bdbea9;
-
   --font: "Roboto", sans-serif;
   --font-quote: "Fira Code", monospace;
 }
@@ -22,8 +21,7 @@ body {
 video {
   object-fit: cover;
   width: 100%;
-  height: 100%;
-
+  height: 110%;
   position: fixed;
   z-index: -1;
 }
@@ -52,6 +50,7 @@ blockquote {
   border-radius: 1.5rem;
   color: #fff;
   margin-top: 40px;
+  text-align: center;
 }
 
 .author {
@@ -114,57 +113,72 @@ button:hover {
   max-width: 950px;
   font-size: 2rem;
   background-color: var(--dark);
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 1.5rem;
   color: #fff;
   margin-top: 40px;
+  text-align: center;
+
 }
 
-@media screen and (max-width: 1023px) {
-  .loader-text,
+@media screen and (min-width: 768px) {
   .blockquote,
   .quote,
   .quoteblock {
     width: 600px;
   }
+  .loader-text {
+    font-size: 1.5rem;
+  }
   .author,
-  button, .loader-text {
+  button {
     font-size: 1.2rem;
   }
   blockquote {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding: 2rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .author,
-  button, .loader-text {
-    font-size: 1rem;
+  button {
+    font-size: 1.1rem;
   }
   blockquote {
     font-size: 1.5rem;
-    padding: 2rem;
+    padding: 1.8rem;
   }
 
-  .loader-text,
+  .loader-text {
+    font-size: 1.3rem;
+    padding: 1.5rem;
+  }
+
   .blockquote,
   .quote,
   .quoteblock {
-    width: 450px;
+    width: 380px;
+  }
+  .author {
+    padding: 0.5rem 0.8rem;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 485px) {
   .author,
-  button, .loader-text {
+  button {
+    font-size: 0.8rem;
+  }
+  blockquote,
+  .loader-text {
     font-size: 1rem;
+    padding: 1rem;
   }
-  blockquote {
-    font-size: 1.2em;
+  .loader-text {
+    padding: 1.2rem;
   }
-  
-  .loader-text,
+
   .blockquote,
   .quote,
   .quoteblock {
@@ -172,6 +186,5 @@ button:hover {
   }
   .author {
     padding: 0.5rem 1rem;
-
   }
 }
